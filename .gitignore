@@ -1,0 +1,12 @@
+# Dependencies and build artifacts
+node_modules/
+.next/
+dist/
+out/
+
+# Local environment files
+.env*
+!.env.example
+
+# Operating system files
+.DS_Store
