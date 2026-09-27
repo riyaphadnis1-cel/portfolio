@@ -3,15 +3,49 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Riya Phadnis — portfolio" />
-    <title>Riya Phadnis — Portfolio</title>
+    <meta name="description" content="Riya Phadnis — UX designer portfolio" />
+    <title>Riya Phadnis — UX Designer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
+    <header class="site-header" id="home">
+      <a class="brand" href="#home">Riya Phadnis</a>
+      <nav aria-label="Main navigation">
+        <a class="active" href="#home">Home</a><a href="#projects">Projects</a><a href="#about">About</a><a href="#contact">Resumé</a>
+      </nav>
+      <button class="theme-button" type="button" aria-label="Toggle colour theme">◔</button>
+    </header>
     <main>
-      <p class="eyebrow">Portfolio</p>
-      <h1>Riya Phadnis</h1>
-      <p class="intro">A new portfolio is taking shape. Check back soon.</p>
+      <section class="hero" id="about">
+        <div class="avatar" aria-label="Riya Phadnis portrait placeholder"><span>RP</span><i></i></div>
+        <h1>Hello! I’m Riya Phadnis <span>⭐</span> and I’m a UX<br class="desktop-break" /> Designer who loves to design products<br class="desktop-break" /> that just feel easy <span>🌞</span></h1>
+        <div class="credentials" aria-label="Experience and education">
+          <div><p>Interned at:</p><strong class="company hdfc"><b>▣</b> HDFC <em>MUTUAL FUND</em></strong></div>
+          <div><p>Graduate from:</p><strong class="company mit"><b>□</b> MIT INSTITUTE <em>OF DESIGN</em></strong></div>
+          <div><p>Volunteered at:</p><strong class="company volunteer">♙ <em>Vivekanand<br />Viklang Vidyalaya</em></strong></div>
+        </div>
+      </section>
+      <section class="projects-section" id="projects">
+        <h2>Projects</h2>
+        <div class="featured-grid">
+          <article class="project-card"><a class="project-art art-ai" href="#contact" aria-label="Open Agentic AI project"><span>✦</span></a><h3>Agentic AI for Content Creators</h3><p>Project explores creative ways to integrate Agentic AI to streamline and simplify the day-to-day tasks of Content Creators</p><div class="tags"><span>User Scenarios</span><span>Personas</span><span>UX Ideation</span><span>Wireframing</span></div></article>
+          <article class="project-card"><a class="project-art art-evenout" href="#contact" aria-label="Open EvenOut project"><span>↗</span></a><h3>EvenOut: Mitigating Social Cost of Debt</h3><p>Project explores the emotional friction of peer-to-peer debt, reimagining repayment as a seamless interaction that removes the awkwardness of asking for money back.</p><div class="tags"><span>Fintech</span><span>Research</span><span>Co-Design</span><span>Wireframe &amp; Prototype</span><span>A/B Testing</span></div></article>
+          <article class="project-card"><a class="project-art art-unibridge" href="#contact" aria-label="Open UniBridge project"><span>⌁</span></a><h3>UniBridge: simplifying study abroad journey</h3><p>Project simplifies the whole flow—from early discovery to post-graduation applications, visas, and relocation.</p><div class="tags"><span>Service Design</span><span>UX Ideation</span><span>Figma Agent</span></div></article>
+          <article class="project-card"><a class="project-art art-eatsure" href="#contact" aria-label="Open EatSure app project"><span>✽</span></a><h3>EatSure App Re-design</h3><p>Project explores the current UX laws and applying them to an existing application and give redesign suggestions to make user experience better.</p><div class="tags"><span>Usability Testing</span><span>Hick's and Fitt's Law</span><span>SUS Metrics</span><span>Prototype</span></div></article>
+        </div>
+        <div class="more-projects">
+          <div class="more-heading"><h3>some more projects</h3><p>that didn’t make to the main grid</p></div>
+          <div class="mini-grid">
+            <article><div class="mini-art one"></div><h4>PulseBlend</h4><p>A Tangible Interaction Design Concept</p><a href="#contact">View Project ↗</a></article><article><div class="mini-art two"></div><h4>TimeTails</h4><p>An Interactive Educational App</p><a href="#contact">View Project ↗</a></article><article><div class="mini-art three"></div><h4>CanvaAI</h4><p>Redesigning the Conversational UI</p><a href="#contact">View Project ↗</a></article><article><div class="mini-art four"></div><h4>Design Research on OFD Apps</h4><p>How UI shapes food decisions</p><a href="#contact">View Project ↗</a></article>
+          </div>
+        </div>
+      </section>
+      <section class="contact" id="contact"><p class="end-note">you've hit the end!</p><h2>Have any Questions? <span>✿</span> I’m happy to connect</h2><div class="socials" aria-label="Social links"><a href="#contact" aria-label="LinkedIn">in</a><a href="#contact" aria-label="Behance">Bē</a><a href="mailto:hello@example.com" aria-label="Email">✉</a></div></section>
     </main>
+    <footer><span>Riya Phadnis</span><small>lots of caffeine was consumed :)</small></footer>
+    <script src="script.js"></script>
   </body>
 </html>
