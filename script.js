@@ -37,3 +37,30 @@ document.querySelectorAll('.project-art').forEach(art => {
         cursor.classList.remove('visible');
     });
 });
+
+// Dynamic active navbar links
+const sections = document.querySelectorAll('header[id], section[id]');
+const navLinks = document.querySelectorAll('nav a[href^="#"]');
+
+const observerOptions = {
+  root: null,
+  rootMargin: '-50% 0px -50% 0px',
+  threshold: 0
+};
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === `#${entry.target.id}`) {
+          link.classList.add('active');
+        }
+      });
+    }
+  });
+}, observerOptions);
+
+sections.forEach(section => {
+  observer.observe(section);
+});
