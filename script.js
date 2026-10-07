@@ -28,9 +28,21 @@ document.addEventListener('mousemove', (e) => {
     cursor.style.top = e.clientY + 'px';
 });
 
+const heroSection = document.querySelector('.hero');
+if (heroSection) {
+    heroSection.addEventListener('mouseenter', () => {
+        cursor.classList.add('visible', 'dot-mode');
+        cursor.textContent = '';
+    });
+    heroSection.addEventListener('mouseleave', () => {
+        cursor.classList.remove('visible', 'dot-mode');
+    });
+}
+
 document.querySelectorAll('.project-art').forEach(art => {
     art.addEventListener('mouseenter', (e) => {
         cursor.classList.add('visible');
+        cursor.classList.remove('dot-mode');
         cursor.textContent = art.classList.contains('art-unibridge') ? 'Coming soon!' : 'View Project';
     });
     art.addEventListener('mouseleave', () => {
