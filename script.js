@@ -39,6 +39,17 @@ if (heroSection) {
     });
 }
 
+const heroH1 = document.querySelector('.hero h1');
+if (heroH1) {
+    heroH1.addEventListener('mousemove', (e) => {
+        const rect = heroH1.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        heroH1.style.setProperty('--mouseX', `${x}px`);
+        heroH1.style.setProperty('--mouseY', `${y}px`);
+    });
+}
+
 document.querySelectorAll('.project-art').forEach(art => {
     art.addEventListener('mouseenter', (e) => {
         cursor.classList.add('visible');
