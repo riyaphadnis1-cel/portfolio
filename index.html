@@ -3,24 +3,32 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Riya Phadnis — UX designer portfolio" />
+    <meta name="description" content="Riya Phadnis — UX Designer portfolio" />
     <title>Riya Phadnis — UX Designer</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <header class="site-header" id="home">
-      <a class="brand" href="#home">Riya Phadnis</a>
-      <nav aria-label="Main navigation">
-        <a href="#home">Home</a><a href="#projects">Projects</a><a href="#play">Play</a><a href="#about">About</a><a href="https://drive.google.com/file/d/1pt_H8amKck5SMVQa_Fr-u0cFmdy_vbHo/view?usp=sharing" target="_blank" rel="noopener noreferrer">Resumé</a>
-      </nav>
-      <button class="menu-button" type="button" aria-label="Open navigation" aria-expanded="false">☰</button>
-      <button class="theme-button" type="button" aria-label="Toggle colour theme">
-        <img src="assets/lucide/moon.png" alt="Moon" class="theme-icon dark-icon">
-        <img src="assets/lucide/sun-dim.png" alt="Sun" class="theme-icon light-icon">
-      </button>
+      <div class="header-inner">
+        <a class="brand" href="#home" id="brand-link">Riya Phadnis</a>
+        <div class="nav-wrapper">
+          <nav aria-label="Main navigation">
+            <a href="#home" class="active" id="nav-home">Home</a>
+            <a href="#projects" id="nav-projects">Projects</a>
+            <a href="#play" id="nav-play">Play</a>
+            <a href="#about" id="nav-about">About</a>
+            <a href="https://drive.google.com/file/d/1pt_H8amKck5SMVQa_Fr-u0cFmdy_vbHo/view?usp=sharing" target="_blank" rel="noopener noreferrer" id="nav-resume">Resumé</a>
+          </nav>
+          <button class="theme-button" type="button" aria-label="Toggle colour theme" id="theme-toggle">
+            <img src="assets/lucide/moon.png" alt="Toggle theme" class="theme-icon">
+          </button>
+        </div>
+        <button class="menu-button" type="button" aria-label="Open navigation" aria-expanded="false" id="menu-toggle">☰</button>
+      </div>
     </header>
+
     <main>
-      <section class="hero">
+      <section class="hero" id="hero-section">
         <div class="hero-content">
           <h1>I design across people,<br>products, and <em>experiences</em></h1>
           <div class="experience-list">
@@ -42,24 +50,111 @@
           </div>
         </div>
       </section>
+
       <section class="projects-section" id="projects">
-        <div class="featured-grid">
-          <article class="project-card">
-            <a class="project-art art-ai" href="https://www.behance.net/gallery/256642339/Loom-Agentic-AI-for-Content-Creators" target="_blank" rel="noopener noreferrer" aria-label="Open Agentic AI project">
-              <video src="assets/Loom_video.mp4" autoplay loop muted playsinline></video>
-            </a>
-            <h3>Agentic AI for Content Creators</h3>
-            <p>Project explores creative ways to integrate Agentic AI to streamline and simplify the day-to-day tasks of Content Creators</p>
-            <div class="tags"><span>User Scenarios</span><span>Personas</span><span>UX Ideation</span><span>Wireframing</span></div>
-          </article>
-          <article class="project-card"><a class="project-art art-evenout" href="https://www.behance.net/gallery/243309669/EvenOut-Mitigating-the-Social-Cost-of-Debt" target="_blank" rel="noopener noreferrer" aria-label="Open EvenOut project"></a><h3>EvenOut: Mitigating Social Cost of Debt</h3><p>Project explores the emotional friction of peer-to-peer debt, reimagining repayment as a seamless interaction that removes the awkwardness of asking for money back.</p><div class="tags"><span>Fintech</span><span>Research</span><span>Co-Design</span><span>Wireframe &amp; Prototype</span><span>A/B Testing</span></div></article>
-          <article class="project-card"><a class="project-art art-unibridge" aria-label="Open UniBridge project"></a><h3>UniBridge: simplifying study abroad journey</h3><p>Project simplifies the whole flow—from early discovery to post-graduation applications, visas, and relocation.</p><div class="tags"><span>Service Design</span><span>UX Ideation</span><span>Figma Agent</span></div></article>
-          <article class="project-card"><a class="project-art art-eatsure" href="https://www.behance.net/gallery/224724169/EatSure-Redesign-Cognitive-Ergonomics" target="_blank" rel="noopener noreferrer" aria-label="Open EatSure app project"></a><h3>EatSure App Re-design</h3><p>Project explores the current UX laws and applying them to an existing application and give redesign suggestions to make user experience better.</p><div class="tags"><span>Usability Testing</span><span>Hick's and Fitt's Law</span><span>SUS Metrics</span><span>Prototype</span></div></article>
+        <div class="projects-grid">
+          <!-- Left Column (710px on desktop) -->
+          <div class="projects-col col-left">
+            <article class="project-card" data-cursor="View Project">
+              <a class="project-thumb-link" href="https://www.behance.net/gallery/256642339/Loom-Agentic-AI-for-Content-Creators" target="_blank" rel="noopener noreferrer" aria-label="Loom: Content Creation made easy">
+                <div class="project-thumb">
+                  <img src="assets/Loom_thumbnail.png" alt="Loom: Content Creation made easy">
+                </div>
+              </a>
+              <div class="project-info">
+                <h2 class="project-title">Content Creation made easy</h2>
+                <p class="project-subtitle">Agentic Design | AI in UX | 2026</p>
+              </div>
+            </article>
+
+            <article class="project-card" data-cursor="View Project">
+              <a class="project-thumb-link" href="https://www.behance.net/riyaphadnis" target="_blank" rel="noopener noreferrer" aria-label="Making ride-hailing work for our cities">
+                <div class="project-thumb">
+                  <img src="assets/sustainableux_thumbnail.png" alt="Making ride-hailing work for our cities">
+                </div>
+              </a>
+              <div class="project-info">
+                <h2 class="project-title">Making ride-hailing work for our cities</h2>
+                <p class="project-subtitle">Sustainable UX | Uber | Service Design | 2026</p>
+              </div>
+            </article>
+
+            <article class="project-card coming-soon" data-cursor="Coming soon!">
+              <a class="project-thumb-link" href="https://www.behance.net/riyaphadnis" target="_blank" rel="noopener noreferrer" aria-label="UniBridge: Simplifying study abroad journey">
+                <div class="project-thumb">
+                  <img src="assets/UniBridge_Thumbnail.png" alt="UniBridge: Simplifying study abroad journey">
+                </div>
+              </a>
+              <div class="project-info">
+                <h2 class="project-title">UniBridge: Simplifying study abroad journey</h2>
+                <p class="project-subtitle">Service Design | Enterprise UX | 2026</p>
+              </div>
+            </article>
+          </div>
+
+          <!-- Right Column (610px on desktop) -->
+          <div class="projects-col col-right">
+            <article class="project-card" data-cursor="View Project">
+              <a class="project-thumb-link" href="https://www.behance.net/gallery/243309669/EvenOut-Mitigating-the-Social-Cost-of-Debt" target="_blank" rel="noopener noreferrer" aria-label="EvenOut: What if splitting expenses didn’t mean chasing people for money?">
+                <div class="project-thumb">
+                  <img src="assets/EvenOut_thumbnail.png" alt="EvenOut: What if splitting expenses didn’t mean chasing people for money?">
+                </div>
+              </a>
+              <div class="project-info">
+                <h2 class="project-title">What if splitting expenses didn’t mean chasing people for money?</h2>
+                <p class="project-subtitle">Interaction Design | Fintech | 2025</p>
+              </div>
+            </article>
+
+            <article class="project-card" data-cursor="View Project">
+              <a class="project-thumb-link" href="https://www.behance.net/gallery/224724169/EatSure-Redesign-Cognitive-Ergonomics" target="_blank" rel="noopener noreferrer" aria-label="EatSure: What if better Usability could change how we experience EatSure?">
+                <div class="project-thumb">
+                  <img src="assets/EatSure_Thumbnail.png" alt="EatSure: What if better Usability could change how we experience EatSure?">
+                </div>
+              </a>
+              <div class="project-info">
+                <h2 class="project-title">What if better Usability could change how we experience EatSure?</h2>
+                <p class="project-subtitle">Cognitive Ergonomics | Redesign | 2026</p>
+              </div>
+            </article>
+
+            <article class="project-card" data-cursor="View Project">
+              <a class="project-thumb-link" href="https://www.behance.net/riyaphadnis" target="_blank" rel="noopener noreferrer" aria-label="Redesigning Canva’s Conversational UI">
+                <div class="project-thumb">
+                  <img src="assets/canva_thumbnail.png" alt="Redesigning Canva’s Conversational UI">
+                </div>
+              </a>
+              <div class="project-info">
+                <h2 class="project-title">Redesigning Canva’s Conversational UI</h2>
+                <p class="project-subtitle">Conversational UX | Redesign | 2025</p>
+              </div>
+            </article>
+          </div>
         </div>
       </section>
-      <section class="contact" id="contact"><p class="end-note">you've hit the end!</p><h2>Have any Questions? I’m happy to connect</h2><div class="socials" aria-label="Social links"><a href="https://www.linkedin.com/in/riya-phadnis-3772b8314/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><img src="assets/linkedin_logo.png" alt="LinkedIn"></a><a href="https://www.behance.net/riyaphadnis" target="_blank" rel="noopener noreferrer" aria-label="Behance"><img src="assets/behance_logo.png" alt="Behance"></a><a href="mailto:riyaphadnis1@gmail.com" aria-label="Email"><img src="assets/lucide/mail_logo.png" alt="Email"></a></div></section>
     </main>
-    <footer><span class="brand">Riya Phadnis</span><div class="footer-note"><span class="dark-msg">that's all, folks<br><span style="color: #727272;">until the next iteration!</span></span><span class="light-msg">who uses light mode tho?!</span></div></footer>
+
+    <footer class="site-footer">
+      <div class="footer-divider"></div>
+      <div class="footer-content">
+        <div class="socials" aria-label="Social links">
+          <a href="https://www.linkedin.com/in/riya-phadnis-3772b8314/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+            <img src="assets/linkedin_logo.png" alt="LinkedIn">
+          </a>
+          <a href="https://www.behance.net/riyaphadnis" target="_blank" rel="noopener noreferrer" aria-label="Behance">
+            <img src="assets/behance_logo.png" alt="Behance">
+          </a>
+          <a href="mailto:riyaphadnis1@gmail.com" aria-label="Email">
+            <img src="assets/lucide/mail_logo.png" alt="Email">
+          </a>
+        </div>
+        <div class="footer-note">
+          <span class="dark-msg">that’s all, folks<br><span class="iteration-text">until the next iteration!</span></span>
+          <span class="light-msg">who uses light mode tho?!</span>
+        </div>
+      </div>
+    </footer>
+
     <script src="script.js"></script>
   </body>
 </html>
