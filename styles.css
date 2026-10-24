@@ -734,7 +734,9 @@ body.light .project-back-btn {
 }
 
 /* Continuous Image Train (Full Bleed, Zero Padding) */
-.loom-case-study {
+.loom-case-study,
+.evenout-case-study,
+.case-study-main {
   width: 100%;
   max-width: 100%;
   margin: 0;
@@ -744,7 +746,9 @@ body.light .project-back-btn {
   position: relative;
 }
 
-.loom-section {
+.loom-section,
+.evenout-section,
+.case-study-section {
   width: 100%;
   margin: 0;
   padding: 0;
@@ -753,7 +757,9 @@ body.light .project-back-btn {
   scroll-margin-top: 0;
 }
 
-.loom-section img {
+.loom-section img,
+.evenout-section img,
+.case-study-section img {
   width: 100%;
   max-width: 100%;
   height: auto;
@@ -797,7 +803,7 @@ body.light .project-back-btn {
 .roadmap-nodes {
   display: flex;
   flex-direction: column;
-  gap: 36px;
+  gap: var(--roadmap-gap, 28px);
   position: relative;
   z-index: 2;
 }
@@ -824,13 +830,13 @@ body.light .project-back-btn {
   left: 50%;
   transform: translateX(-50%);
   width: 0;
-  height: 36px;
+  height: var(--roadmap-gap, 28px);
   border-left: 2px dashed #F15013;
   pointer-events: none;
 }
 
 .roadmap-node:last-child::after {
-  height: 24px;
+  height: 20px;
 }
 
 .roadmap-square {
