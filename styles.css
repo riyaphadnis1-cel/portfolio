@@ -169,7 +169,7 @@ main {
 .hero {
   width: min(100% - 96px, 1344px);
   margin-inline: auto;
-  padding-top: 260px;
+  padding-top: 200px;
   padding-bottom: 64px;
   cursor: none;
 }
