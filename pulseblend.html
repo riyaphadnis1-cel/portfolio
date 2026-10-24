@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="PulseBlend — Tangible Interaction Design Case Study by Riya Phadnis" />
+    <title>PulseBlend — Riya Phadnis-UX Designer</title>
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg?v=small" />
+    <link rel="icon" type="image/png" href="assets/favicon.png?v=small" />
+    <link rel="stylesheet" href="styles.css?v=pulseblend1" />
+  </head>
+  <body class="case-study-body">
+    <!-- Top-left fixed < Back button in orange (no pill), visible when scrolling up -->
+    <a href="index.html#projects" class="project-back-btn" id="project-back-btn" aria-label="Back to projects">&lt; Back</a>
+
+    <!-- Vertical Roadmap Navigation on Left Side -->
+    <aside class="project-roadmap" aria-label="Project section roadmap" id="project-roadmap">
+      <div class="roadmap-track">
+        <div class="roadmap-nodes">
+          <button type="button" class="roadmap-node active" data-target="overview" aria-label="Overview">
+            <span class="roadmap-square"></span>
+            <span class="roadmap-label">| Overview</span>
+          </button>
+          <button type="button" class="roadmap-node" data-target="research" aria-label="Research">
+            <span class="roadmap-square"></span>
+            <span class="roadmap-label">| Research</span>
+          </button>
+          <button type="button" class="roadmap-node" data-target="introducing" aria-label="Introducing">
+            <span class="roadmap-square"></span>
+            <span class="roadmap-label">| Introducing</span>
+          </button>
+          <button type="button" class="roadmap-node" data-target="experience-flow" aria-label="Experience Flow">
+            <span class="roadmap-square"></span>
+            <span class="roadmap-label">| Experience Flow</span>
+          </button>
+          <button type="button" class="roadmap-node" data-target="making" aria-label="Making PulseBlend">
+            <span class="roadmap-square"></span>
+            <span class="roadmap-label">| Making PulseBlend</span>
+          </button>
+          <button type="button" class="roadmap-node" data-target="ui-design" aria-label="UI Design">
+            <span class="roadmap-square"></span>
+            <span class="roadmap-label">| UI Design</span>
+          </button>
+          <button type="button" class="roadmap-node" data-target="coding" aria-label="Coding">
+            <span class="roadmap-square"></span>
+            <span class="roadmap-label">| Coding</span>
+          </button>
+          <button type="button" class="roadmap-node" data-target="making-video" aria-label="Making Video">
+            <span class="roadmap-square"></span>
+            <span class="roadmap-label">| Making Video</span>
+          </button>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Continuous Image Train Case Study (Zero Background Padding, Edge to Edge) -->
+    <main class="pulseblend-case-study" id="case-study">
+      <!-- 1. Overview (1 & 2) -->
+      <section class="pulseblend-section" id="overview">
+        <img src="assets/pulseblend_overview1.png" alt="PulseBlend Overview Part 1" loading="eager" decoding="async">
+        <img src="assets/pulseblend_overview2.png" alt="PulseBlend Overview Part 2" loading="lazy" decoding="async">
+      </section>
+
+      <!-- 2. Research -->
+      <section class="pulseblend-section" id="research">
+        <img src="assets/pulseblend_research.png" alt="PulseBlend Research" loading="lazy" decoding="async">
+      </section>
+
+      <!-- 3. Introducing -->
+      <section class="pulseblend-section" id="introducing">
+        <img src="assets/pulseblend_introducing.png" alt="PulseBlend Introducing" loading="lazy" decoding="async">
+      </section>
+
+      <!-- 4. Experience Flow -->
+      <section class="pulseblend-section" id="experience-flow">
+        <img src="assets/pulseblend_experienceflow.png" alt="PulseBlend Experience Flow" loading="lazy" decoding="async">
+      </section>
+
+      <!-- 5. Making PulseBlend (1 & 2) -->
+      <section class="pulseblend-section" id="making">
+        <img src="assets/pulseblend_making1.png" alt="Making PulseBlend Part 1" loading="lazy" decoding="async">
+        <img src="assets/pulseblend_making2.png" alt="Making PulseBlend Part 2" loading="lazy" decoding="async">
+      </section>
+
+      <!-- 6. UI Design -->
+      <section class="pulseblend-section" id="ui-design">
+        <img src="assets/pulseblend_UIdesign.png" alt="PulseBlend UI Design" loading="lazy" decoding="async">
+      </section>
+
+      <!-- 7. Coding -->
+      <section class="pulseblend-section" id="coding">
+        <img src="assets/pulseblend_coding.png" alt="PulseBlend Coding" loading="lazy" decoding="async">
+      </section>
+
+      <!-- 8. Working Video (With Embedded Video Over the Graphic Frame) -->
+      <section class="pulseblend-section" id="making-video">
+        <div class="video-slide-container">
+          <img src="assets/pulseblend_working_video.png" alt="PulseBlend Working Video" loading="lazy" decoding="async">
+          <video class="pulseblend-video-overlay" src="assets/PulseBlend_working_vid.mp4" controls autoplay muted loop playsinline></video>
+        </div>
+      </section>
+    </main>
+
+    <script src="script.js?v=pulseblend1"></script>
+  </body>
+</html>

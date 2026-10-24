@@ -736,6 +736,9 @@ body.light .project-back-btn {
 /* Continuous Image Train (Full Bleed, Zero Padding) */
 .loom-case-study,
 .evenout-case-study,
+.sustainable-case-study,
+.eatsure-case-study,
+.pulseblend-case-study,
 .case-study-main {
   width: 100%;
   max-width: 100%;
@@ -748,6 +751,9 @@ body.light .project-back-btn {
 
 .loom-section,
 .evenout-section,
+.sustainable-section,
+.eatsure-section,
+.pulseblend-section,
 .case-study-section {
   width: 100%;
   margin: 0;
@@ -759,6 +765,9 @@ body.light .project-back-btn {
 
 .loom-section img,
 .evenout-section img,
+.sustainable-section img,
+.eatsure-section img,
+.pulseblend-section img,
 .case-study-section img {
   width: 100%;
   max-width: 100%;
@@ -768,6 +777,34 @@ body.light .project-back-btn {
   padding: 0;
   border: none;
   vertical-align: middle;
+}
+
+/* Video Overlay for PulseBlend Case Study */
+.video-slide-container {
+  position: relative;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  line-height: 0;
+}
+
+.video-slide-container img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.pulseblend-video-overlay {
+  position: absolute;
+  left: 8.333%;
+  top: 12.545%;
+  width: 79.705%;
+  height: 33.065%;
+  object-fit: cover;
+  border-radius: 0;
+  background: #000;
+  box-shadow: none;
 }
 
 /* Roadmap Vertical Navbar */
