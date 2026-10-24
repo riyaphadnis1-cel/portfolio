@@ -104,25 +104,28 @@ window.addEventListener('scroll', () => {
 // Custom Cursor Implementation
 const cursor = document.createElement('div');
 cursor.className = 'custom-cursor';
+
+const cursorSquare = document.createElement('span');
+cursorSquare.className = 'cursor-square';
+
+const cursorLabel = document.createElement('span');
+cursorLabel.className = 'cursor-label';
+
+cursor.appendChild(cursorSquare);
+cursor.appendChild(cursorLabel);
 document.body.appendChild(cursor);
 
 document.addEventListener('mousemove', (e) => {
   cursor.style.left = e.clientX + 'px';
   cursor.style.top = e.clientY + 'px';
+  cursor.classList.add('visible');
 });
 
-// Hero hover effects
-const heroSection = document.getElementById('hero-section');
-if (heroSection) {
-  heroSection.addEventListener('mouseenter', () => {
-    cursor.classList.add('visible', 'dot-mode');
-    cursor.textContent = '';
-  });
-  heroSection.addEventListener('mouseleave', () => {
-    cursor.classList.remove('visible', 'dot-mode');
-  });
-}
+document.addEventListener('mouseleave', () => {
+  cursor.classList.remove('visible');
+});
 
+// Hero hover spotlight effects
 const heroH1 = document.querySelector('.hero h1');
 if (heroH1) {
   heroH1.addEventListener('mousemove', (e) => {
@@ -134,14 +137,24 @@ if (heroH1) {
   });
 }
 
-// Project cards cursor hover
-document.querySelectorAll('.project-card').forEach(card => {
-  card.addEventListener('mouseenter', () => {
-    cursor.classList.add('visible');
-    cursor.classList.remove('dot-mode');
-    cursor.textContent = card.dataset.cursor || 'View Project';
-  });
-  card.addEventListener('mouseleave', () => {
-    cursor.classList.remove('visible');
-  });
+// Project cards cursor hover: smaller square + label in #F15013 (no pill)
+document.addEventListener('mouseover', (e) => {
+  const card = e.target.closest('.project-card');
+  if (card) {
+    cursor.classList.add('project-hover');
+    cursorLabel.textContent = card.dataset.cursor || 'View Project';
+  } else if (e.target.closest('a, button')) {
+    cursor.classList.add('link-hover');
+  }
+});
+
+document.addEventListener('mouseout', (e) => {
+  const card = e.target.closest('.project-card');
+  if (card && !card.contains(e.relatedTarget)) {
+    cursor.classList.remove('project-hover');
+    cursorLabel.textContent = '';
+  }
+  if (e.target.closest('a, button') && !e.target.closest('a, button').contains(e.relatedTarget)) {
+    cursor.classList.remove('link-hover');
+  }
 });

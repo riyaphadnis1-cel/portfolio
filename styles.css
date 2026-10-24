@@ -197,7 +197,7 @@ main {
 }
 
 .hero h1:hover {
-  background: radial-gradient(circle 120px at var(--mouseX) var(--mouseY), #8B3DFF 0%, #3E78FF 30%, var(--text) 70%);
+  background: radial-gradient(circle 130px at var(--mouseX) var(--mouseY), #F15013 0%, rgba(241, 80, 19, 0.4) 40%, var(--text) 75%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -457,37 +457,74 @@ main {
 /* -----------------------------------------
    Custom Cursor
 ----------------------------------------- */
+@media (min-width: 901px) {
+  body, a, button {
+    cursor: none;
+  }
+}
+
 .custom-cursor {
   position: fixed;
+  top: 0;
+  left: 0;
   pointer-events: none;
-  background: #3D5CFF;
-  color: #FFFFFF;
-  padding: 10px 20px;
-  border-radius: 30px;
-  font-size: 16px;
-  font-family: 'Neue Montreal', sans-serif;
-  font-weight: 500;
   z-index: 9999;
-  transform: translate(-50%, -50%);
-  opacity: 0;
-  transition: opacity 0.2s ease, transform 0.08s ease-out;
-  white-space: nowrap;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   display: flex;
   align-items: center;
-  justify-content: center;
+  gap: 8px;
+  background: transparent;
+  padding: 0;
+  border-radius: 0;
+  box-shadow: none;
+  opacity: 0;
+  transform: translate(-50%, -50%);
+  transition: opacity 0.15s ease, transform 0.08s ease-out;
+  user-select: none;
 }
 
 .custom-cursor.visible {
   opacity: 1;
 }
 
-.custom-cursor.dot-mode {
-  width: 12px;
-  height: 12px;
-  padding: 0;
-  color: transparent;
-  box-shadow: none;
+.cursor-square {
+  display: block;
+  width: 10px;
+  height: 10px;
+  background-color: #F15013;
+  border-radius: 0;
+  flex-shrink: 0;
+  transition: width 0.15s ease, height 0.15s ease, transform 0.15s ease;
+}
+
+.cursor-label {
+  display: none;
+  font-family: 'Neue Montreal', sans-serif;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 1;
+  color: #F15013;
+  white-space: nowrap;
+  letter-spacing: 0.01em;
+}
+
+/* Hovering interactive links and buttons */
+.custom-cursor.link-hover .cursor-square {
+  transform: scale(1.35);
+}
+
+/* Project card hover: smaller square + label beside it, no pill */
+.custom-cursor.project-hover {
+  transform: translate(-3px, -50%);
+}
+
+.custom-cursor.project-hover .cursor-square {
+  width: 6px;
+  height: 6px;
+  transform: none;
+}
+
+.custom-cursor.project-hover .cursor-label {
+  display: inline-block;
 }
 
 /* -----------------------------------------
@@ -630,7 +667,11 @@ main {
     line-height: 24px;
   }
 
+  body, .hero, .project-card, .project-thumb-link, a, button {
+    cursor: auto;
+  }
+
   .custom-cursor {
-    display: none;
+    display: none !important;
   }
 }
