@@ -365,72 +365,14 @@ main {
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  height: 62px;
-}
-
-.socials {
-  display: flex;
-  align-items: center;
-  gap: 32px;
-}
-
-.socials a {
-  width: 62px;
-  height: 62px;
-  display: grid;
-  place-items: center;
-  border: 1px solid var(--icon-border);
-  border-radius: 50%;
-  background: transparent;
-  transition: background-color 0.2s ease, border-color 0.2s ease;
-  box-sizing: border-box;
-}
-
-.socials a:hover {
-  background: var(--text);
-}
-
-.socials a img {
-  object-fit: contain;
-  transition: filter 0.2s ease;
-}
-
-.socials a[aria-label="LinkedIn"] img {
-  width: 25px;
-  height: 25px;
-}
-
-.socials a[aria-label="Behance"] img {
-  width: 30px;
-  height: 19px;
-}
-
-.socials a[aria-label="Email"] img {
-  width: 30px;
-  height: 24px;
-}
-
-/* Dark mode hover: icon turns dark */
-.socials a:hover img {
-  filter: invert(1);
-}
-
-/* Light mode default: icon is black (inverted) */
-.light .socials img {
-  filter: invert(1);
-}
-
-/* Light mode hover: icon turns white (uninverted) against black bg */
-.light .socials a:hover img {
-  filter: invert(0);
 }
 
 .footer-note {
   font-family: 'Neue Montreal', sans-serif;
   font-weight: 400;
-  font-size: 20px;
+  font-size: 18px;
   line-height: 24px;
-  text-align: right;
+  text-align: left;
   color: var(--footer-text);
   transition: color 0.25s ease;
 }
@@ -453,6 +395,63 @@ main {
 
 .light .light-msg {
   display: block;
+}
+
+.socials {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.socials a {
+  width: 48px;
+  height: 48px;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--icon-border);
+  border-radius: 50%;
+  background: transparent;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+  box-sizing: border-box;
+}
+
+.socials a:hover {
+  background: var(--text);
+}
+
+.socials a img {
+  object-fit: contain;
+  transition: filter 0.2s ease;
+}
+
+.socials a[aria-label="LinkedIn"] img {
+  width: 20px;
+  height: 20px;
+}
+
+.socials a[aria-label="Behance"] img {
+  width: 24px;
+  height: 15px;
+}
+
+.socials a[aria-label="Email"] img {
+  width: 24px;
+  height: 19px;
+}
+
+/* Dark mode hover: icon turns dark */
+.socials a:hover img {
+  filter: invert(1);
+}
+
+/* Light mode default: icon is black (inverted) */
+.light .socials img {
+  filter: invert(1);
+}
+
+/* Light mode hover: icon turns white (uninverted) against black bg */
+.light .socials a:hover img {
+  filter: invert(0);
 }
 
 /* -----------------------------------------
@@ -617,18 +616,18 @@ main {
   }
 
   .socials {
-    gap: 20px;
+    gap: 16px;
   }
 
   .socials a {
-    width: 52px;
-    height: 52px;
+    width: 44px;
+    height: 44px;
   }
 
   .footer-note {
     text-align: left;
-    font-size: 17px;
-    line-height: 22px;
+    font-size: 18px;
+    line-height: 24px;
   }
 
   .custom-cursor {
