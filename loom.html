@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Loom — Agentic AI for Content Creators Case Study by Riya Phadnis" />
+    <title>Loom — Riya Phadnis-UX Designer</title>
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg?v=small" />
+    <link rel="icon" type="image/png" href="assets/favicon.png?v=small" />
+    <link rel="stylesheet" href="styles.css?v=loom5" />
+  </head>
+  <body class="case-study-body">
+    <!-- Top-left fixed < Back button in orange (no pill), visible when scrolling up -->
+    <a href="index.html#projects" class="project-back-btn" id="project-back-btn" aria-label="Back to projects">&lt; Back</a>
+
+    <!-- Vertical Roadmap Navigation on Left Side -->
+    <aside class="project-roadmap" aria-label="Project section roadmap" id="project-roadmap">
+      <div class="roadmap-track">
+        <div class="roadmap-nodes">
+          <button type="button" class="roadmap-node active" data-target="overview" aria-label="Overview">
+            <span class="roadmap-square"></span>
+            <span class="roadmap-label">| Overview</span>
+          </button>
+          <button type="button" class="roadmap-node" data-target="problem" aria-label="Problem">
+            <span class="roadmap-square"></span>
+            <span class="roadmap-label">| Problem</span>
+          </button>
+          <button type="button" class="roadmap-node" data-target="research" aria-label="Research">
+            <span class="roadmap-square"></span>
+            <span class="roadmap-label">| Research</span>
+          </button>
+          <button type="button" class="roadmap-node" data-target="persona" aria-label="Persona">
+            <span class="roadmap-square"></span>
+            <span class="roadmap-label">| Persona</span>
+          </button>
+          <button type="button" class="roadmap-node" data-target="solution" aria-label="Solution">
+            <span class="roadmap-square"></span>
+            <span class="roadmap-label">| Solution</span>
+          </button>
+          <button type="button" class="roadmap-node" data-target="system-design" aria-label="System Design">
+            <span class="roadmap-square"></span>
+            <span class="roadmap-label">| System Design</span>
+          </button>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Continuous Image Train Case Study (Zero Background Padding, Edge to Edge) -->
+    <main class="loom-case-study" id="case-study">
+      <!-- 1. Overview -->
+      <section class="loom-section" id="overview">
+        <img src="assets/loom_overview.png" alt="Loom Overview" loading="eager" decoding="async">
+      </section>
+
+      <!-- 2. Problem -->
+      <section class="loom-section" id="problem">
+        <img src="assets/loom_problem.png" alt="Loom Problem" loading="lazy" decoding="async">
+      </section>
+
+      <!-- 3. Research -->
+      <section class="loom-section" id="research">
+        <img src="assets/loom_research.png" alt="Loom Research" loading="lazy" decoding="async">
+      </section>
+
+      <!-- 4. Persona -->
+      <section class="loom-section" id="persona">
+        <img src="assets/loom_persona.png" alt="Loom Persona" loading="lazy" decoding="async">
+      </section>
+
+      <!-- 5. Solution (1, 2, 3, 4) -->
+      <section class="loom-section" id="solution">
+        <img src="assets/loom_solution1.png" alt="Loom Solution part 1" loading="lazy" decoding="async">
+        <img src="assets/loom_solution2.png" alt="Loom Solution part 2" loading="lazy" decoding="async">
+        <img src="assets/loom_solution3.png" alt="Loom Solution part 3" loading="lazy" decoding="async">
+        <img src="assets/loom_solution4.png" alt="Loom Solution part 4" loading="lazy" decoding="async">
+      </section>
+
+      <!-- 6. System Design -->
+      <section class="loom-section" id="system-design">
+        <img src="assets/loom_system_design.png" alt="Loom System Design" loading="lazy" decoding="async">
+      </section>
+    </main>
+
+    <script src="script.js?v=loom5"></script>
+  </body>
+</html>

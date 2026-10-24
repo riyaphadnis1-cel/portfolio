@@ -158,3 +158,132 @@ document.addEventListener('mouseout', (e) => {
     cursor.classList.remove('link-hover');
   }
 });
+
+// Vertical Roadmap Navigation & Case Study Back Button Logic
+const roadmap = document.querySelector('.project-roadmap');
+const caseStudyBackBtn = document.getElementById('project-back-btn');
+
+let lastScrollY = window.pageYOffset;
+let isNavigatingViaClick = false;
+
+function setCaseStudyNavVisible(show) {
+  if (roadmap) {
+    roadmap.classList.toggle('visible', show);
+  }
+  if (caseStudyBackBtn) {
+    caseStudyBackBtn.classList.toggle('visible', show);
+  }
+}
+
+if (roadmap || caseStudyBackBtn) {
+  // Only show vertical nav and Back button when user scrolls UP; hide when scrolling DOWN or at top
+  function handleCaseStudyScrollDirection() {
+    if (isNavigatingViaClick) return;
+
+    const currentScrollY = window.pageYOffset;
+    const diff = currentScrollY - lastScrollY;
+
+    // At or near the top of the case study: always hide
+    if (currentScrollY <= 60) {
+      setCaseStudyNavVisible(false);
+      lastScrollY = currentScrollY;
+      return;
+    }
+
+    // Meaningful scroll threshold to avoid micro-jitter
+    if (Math.abs(diff) > 4) {
+      if (diff < 0) {
+        // Scrolling UP -> SHOW
+        setCaseStudyNavVisible(true);
+      } else {
+        // Scrolling DOWN -> HIDE
+        setCaseStudyNavVisible(false);
+      }
+      lastScrollY = currentScrollY;
+    }
+  }
+
+  window.addEventListener('scroll', () => {
+    window.requestAnimationFrame(handleCaseStudyScrollDirection);
+  }, { passive: true });
+
+  // Initial check on load
+  handleCaseStudyScrollDirection();
+}
+
+if (roadmap) {
+  const roadmapNodes = Array.from(roadmap.querySelectorAll('.roadmap-node'));
+  const roadmapSections = roadmapNodes.map(node => {
+    const id = node.getAttribute('data-target');
+    return {
+      node,
+      id,
+      elem: document.getElementById(id)
+    };
+  }).filter(item => item.elem !== null);
+
+  // Smooth scroll on roadmap node click
+  roadmapNodes.forEach(node => {
+    node.addEventListener('click', (e) => {
+      e.preventDefault();
+      const targetId = node.getAttribute('data-target');
+      const targetElem = document.getElementById(targetId);
+      if (targetElem) {
+        isNavigatingViaClick = true;
+        setCaseStudyNavVisible(true);
+
+        const headerElem = document.querySelector('.site-header');
+        const headerHeight = headerElem ? headerElem.offsetHeight : 0;
+        const targetTop = targetElem.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+        window.scrollTo({ top: targetTop, behavior: 'smooth' });
+
+        roadmapNodes.forEach(n => n.classList.remove('active'));
+        node.classList.add('active');
+
+        // Reset click navigation flag once smooth scrolling completes
+        setTimeout(() => {
+          isNavigatingViaClick = false;
+          lastScrollY = window.pageYOffset;
+        }, 850);
+      }
+    });
+  });
+
+  // Scrollspy tracking
+  function updateRoadmapScrollspy() {
+    const headerElem = document.querySelector('.site-header');
+    const headerHeight = headerElem ? headerElem.offsetHeight : 0;
+    const triggerY = window.pageYOffset + headerHeight + 100;
+
+    let currentSection = roadmapSections[0];
+    for (let i = 0; i < roadmapSections.length; i++) {
+      const top = roadmapSections[i].elem.offsetTop;
+      if (triggerY >= top) {
+        currentSection = roadmapSections[i];
+      }
+    }
+
+    // If near bottom of the page, activate the last section
+    if (window.innerHeight + window.pageYOffset >= document.documentElement.scrollHeight - 150) {
+      currentSection = roadmapSections[roadmapSections.length - 1];
+    }
+
+    if (currentSection) {
+      roadmapSections.forEach(({ node }) => {
+        if (node === currentSection.node) {
+          node.classList.add('active');
+        } else {
+          node.classList.remove('active');
+        }
+      });
+    }
+  }
+
+  window.addEventListener('scroll', () => {
+    window.requestAnimationFrame(updateRoadmapScrollspy);
+  }, { passive: true });
+
+  window.addEventListener('resize', updateRoadmapScrollspy, { passive: true });
+  updateRoadmapScrollspy();
+}
+
