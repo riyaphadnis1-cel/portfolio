@@ -21,6 +21,8 @@
   --subtext: #C4C4C4;
   --footer-text: #D5D5D5;
   --icon-border: #FFFFFF;
+  --nav-link: #C4C4C4;
+  --nav-link-active: #FFFFFF;
 }
 
 body.light {
@@ -32,6 +34,8 @@ body.light {
   --subtext: #727272;
   --footer-text: #494949;
   --icon-border: #000000;
+  --nav-link: #494949;
+  --nav-link-active: #000000;
 }
 
 * {
@@ -106,19 +110,20 @@ nav a {
   font-weight: 400;
   font-size: 16px;
   line-height: 19px;
-  color: var(--text);
+  color: var(--nav-link);
   text-decoration: none;
-  transition: opacity 0.2s ease;
+  transition: color 0.2s ease;
   white-space: nowrap;
 }
 
 nav a:hover {
-  opacity: 0.75;
+  color: var(--nav-link-active);
+  text-decoration: none;
 }
 
 nav a.active {
-  text-decoration: underline;
-  text-underline-offset: 4px;
+  color: var(--nav-link-active);
+  text-decoration: none;
 }
 
 .theme-button {
@@ -197,7 +202,7 @@ main {
 }
 
 .hero h1:hover {
-  background: radial-gradient(circle 130px at var(--mouseX) var(--mouseY), #F15013 0%, rgba(241, 80, 19, 0.4) 40%, var(--text) 75%);
+  background: radial-gradient(circle 200px at var(--mouseX) var(--mouseY), #FD6E37 0%, #F15013 45%, var(--text) 85%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
