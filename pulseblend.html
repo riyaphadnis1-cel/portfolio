@@ -4,10 +4,15 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="PulseBlend — Tangible Interaction Design Case Study by Riya Phadnis" />
-    <title>PulseBlend — Riya Phadnis-UX Designer</title>
+    <title>PulseBlend | Riya Phadnis</title>
     <link rel="icon" type="image/svg+xml" href="assets/favicon.svg?v=small" />
     <link rel="icon" type="image/png" href="assets/favicon.png?v=small" />
-    <link rel="stylesheet" href="styles.css?v=pulseblend1" />
+    <script>
+      if (localStorage.getItem('theme') === 'light') {
+        document.documentElement.classList.add('light');
+      }
+    </script>
+    <link rel="stylesheet" href="styles.css?v=pulseblend2" />
   </head>
   <body class="case-study-body">
     <!-- Top-left fixed < Back button in orange (no pill), visible when scrolling up -->
@@ -101,6 +106,27 @@
       </section>
     </main>
 
-    <script src="script.js?v=pulseblend1"></script>
+    <!-- Standard Project Footer -->
+    <footer class="site-footer">
+      <div class="footer-divider"></div>
+      <div class="footer-content">
+        <div class="footer-note">
+          <a href="index.html#projects" class="footer-back-link">Back to Projects</a>
+        </div>
+        <div class="socials" aria-label="Social links">
+          <a href="https://www.linkedin.com/in/riya-phadnis-3772b8314/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+            <img src="assets/linkedin_logo.png" alt="LinkedIn">
+          </a>
+          <a href="https://www.behance.net/riyaphadnis" target="_blank" rel="noopener noreferrer" aria-label="Behance">
+            <img src="assets/behance_logo.png" alt="Behance">
+          </a>
+          <a href="mailto:riyaphadnis1@gmail.com" aria-label="Email">
+            <img src="assets/lucide/mail_logo.png" alt="Email">
+          </a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js?v=pulseblend2"></script>
   </body>
 </html>

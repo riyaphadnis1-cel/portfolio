@@ -3,12 +3,14 @@ const themeButton = document.getElementById('theme-toggle');
 const savedTheme = localStorage.getItem('theme');
 
 if (savedTheme === 'light') {
+  document.documentElement.classList.add('light');
   document.body.classList.add('light');
 }
 
 if (themeButton) {
   themeButton.addEventListener('click', () => {
     const isLight = document.body.classList.toggle('light');
+    document.documentElement.classList.toggle('light', isLight);
     localStorage.setItem('theme', isLight ? 'light' : 'dark');
   });
 }

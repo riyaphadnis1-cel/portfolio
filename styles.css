@@ -25,6 +25,7 @@
   --nav-link-active: #FFFFFF;
 }
 
+html.light,
 body.light {
   --bg: #FFFFFF;
   --text: #000000;
@@ -380,6 +381,24 @@ main {
   text-align: left;
   color: var(--footer-text);
   transition: color 0.25s ease;
+}
+
+.footer-back-link {
+  font-family: 'Neue Montreal', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 24px;
+  color: var(--footer-text);
+  text-decoration: underline;
+  text-underline-offset: 5px;
+  text-decoration-thickness: 1px;
+  transition: color 0.2s ease, text-decoration-color 0.2s ease;
+  cursor: pointer;
+}
+
+.footer-back-link:hover {
+  color: #F15013;
+  text-decoration-color: #F15013;
 }
 
 .iteration-text {
@@ -840,7 +859,7 @@ body.light .project-back-btn {
 .roadmap-nodes {
   display: flex;
   flex-direction: column;
-  gap: var(--roadmap-gap, 28px);
+  gap: var(--roadmap-gap, 22px);
   position: relative;
   z-index: 2;
 }
@@ -850,8 +869,8 @@ body.light .project-back-btn {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 24px;
-  height: 24px;
+  width: 18px;
+  height: 18px;
   padding: 0;
   border: none;
   background: transparent;
@@ -867,47 +886,47 @@ body.light .project-back-btn {
   left: 50%;
   transform: translateX(-50%);
   width: 0;
-  height: var(--roadmap-gap, 28px);
-  border-left: 2px dashed #F15013;
+  height: var(--roadmap-gap, 22px);
+  border-left: 1.5px dashed #F15013;
   pointer-events: none;
 }
 
 .roadmap-node:last-child::after {
-  height: 20px;
+  height: 14px;
 }
 
 .roadmap-square {
-  width: 14px;
-  height: 14px;
-  border: 2px solid #F15013;
+  width: 8px;
+  height: 8px;
+  border: 1.5px solid #F15013;
   background: transparent;
   box-sizing: border-box;
   transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.2s ease, box-shadow 0.2s ease;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  box-shadow: none;
 }
 
 .roadmap-node:hover .roadmap-square,
 .roadmap-node:focus-visible .roadmap-square {
-  transform: scale(1.2);
-  box-shadow: 0 0 10px rgba(241, 80, 19, 0.4);
+  transform: scale(1.35);
+  box-shadow: 0 0 6px rgba(241, 80, 19, 0.4);
 }
 
 .roadmap-node.active .roadmap-square {
   background: #F15013 !important;
-  box-shadow: 0 0 8px rgba(241, 80, 19, 0.5);
+  box-shadow: 0 0 6px rgba(241, 80, 19, 0.45);
 }
 
 /* Roadmap Hover Label: Text-only in #F15013, no pill box or border */
 .roadmap-label {
   position: absolute;
-  left: calc(100% + 12px);
+  left: calc(100% + 10px);
   top: 50%;
   transform: translateY(-50%) translateX(-4px);
   opacity: 0;
   pointer-events: none;
   white-space: nowrap;
   font-family: 'Neue Montreal', sans-serif;
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 500;
   letter-spacing: 0.02em;
   color: #F15013;
@@ -930,13 +949,19 @@ body.light .project-back-btn {
   transform: translateY(-50%) translateX(0);
 }
 
+/* Footer on case study pages */
+body.case-study-body .site-footer {
+  margin-top: 100px;
+  padding-bottom: 60px;
+}
+
 @media (max-width: 1024px) {
   .project-roadmap {
     left: 24px;
   }
 
   .roadmap-nodes {
-    gap: 28px;
+    gap: 20px;
   }
 
   .project-back-btn {
